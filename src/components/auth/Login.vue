@@ -18,6 +18,15 @@ export default {
       password: ''
     }
   },
+
+  beforeUpdate() {
+    console.log("beforeUpdate from Login");
+  },
+
+  updated() {
+    console.log("updated from Login");
+  },
+
   methods: {
     updateLoginDetails() {
       this.$emit('update', this.email);
