@@ -1,8 +1,22 @@
 <template>
   <div>
+    {{ formType }}
+
     <form>
-      <input type="text" v-model="email">
-      <input type="password" v-model="password">
+      <div v-if="formType === 'register'">
+        <label>Name</label>
+        <input type="text" v-model="name">
+      </div>
+
+      <div>
+        <label>Email</label>
+        <input type="text" v-model="email">
+      </div>
+
+      <div>
+        <label>Password</label>
+        <input type="password" v-model="password">
+      </div>
     </form>
 
     <button @click.prevent="updateLoginDetails">Login</button>
@@ -15,8 +29,13 @@ export default {
   data() {
     return {
       email: '',
-      password: ''
+      password: '',
+      name: ''
     }
+  },
+
+  props: {
+    formType: String
   },
 
   methods: {
