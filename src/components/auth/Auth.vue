@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'Login',
+  name: 'Auth',
   data() {
     return {
       email: '',
